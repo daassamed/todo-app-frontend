@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TaskItem = ({ task, onToggleComplete, onDelete }) => {
+const TaskItem = React.memo(({ task, onToggleComplete, onDelete }) => {
   return (
     <div className={`task-item ${task.completed ? 'completed' : ''}`}>
       <div className="task-content">
@@ -35,6 +35,8 @@ const TaskItem = ({ task, onToggleComplete, onDelete }) => {
       </button>
     </div>
   );
-};
+});
+
+TaskItem.displayName = 'TaskItem';
 
 export default TaskItem;
